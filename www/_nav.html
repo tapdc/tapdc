@@ -1,0 +1,36 @@
+<div class="header">
+	<table class="nav">
+		<tr>
+			<td>
+				<a href="/">
+					<img src="/media/logo-short.jpg" height="50px" />
+				</a>
+			</td>
+			<td>
+				<a href="/about.html" data-nav="about">About</a>
+			</td>
+			<td>
+				<a href="/board.html" data-nav="board">Board</a>
+			</td>
+			<td>
+				<a href="/events.html" data-nav="events"> Events</a>
+			</td>
+			<td class="menu">
+				<span style="cursor:pointer;" data-nav="programs">Programs</span> <span class="darrow"></span>
+				<div class="menu">
+					<div>
+						<div><a href="/programs.html#edge-mentoring">TAP Edge</a></div>
+						<div><a href="/programs.html#bike-there">Bike THERE</a></div>
+						<div><a href="/programs.html#professional">Professional Dev.</a></div>
+					</div>
+				</div>
+			</td>
+			<td>
+				<a href="https://www.facebook.com/TaiwaneseAmericanProfessionalsDC" target="_blank"><i class="fa fa-facebook-square" style="color:rgb(65,94,155)"></i> Facebook</a>
+			</td>
+		</tr>
+	</table>
+	<script>
+		$('[data-nav="$nav"]').addClass('current');
+	</script>
+</div>

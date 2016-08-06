@@ -1,0 +1,61 @@
+<!--#include _header.html title="TAP-DC - Events"-->
+<!--#include _nav.html nav="events"-->
+	
+	<div class="info">
+		<h1>Upcoming Events</h1>
+		<!--#include _upcoming.html-->
+	</div>
+	
+	<br><br>
+	
+	<div class="info">
+		<h1>Past Events</h1>
+		<!--#include _past.html-->
+	</div>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script>
+	
+	function event_toggle(a,first){
+		if($(a).hasClass('expanded')){
+			$(a).removeClass('expanded');
+			$(a).next('div.details').slideUp();
+		}
+		else{
+			$(a).addClass('expanded');
+			if(first) $(a).next('div.details').show();
+			else $(a).next('div.details').slideDown();
+			var map = $(a).next('div.details').find('div.map');
+			if(map.length && !map.hasClass('loaded')){
+				map.addClass('loaded');
+				load_map(map.get(0),map.attr('data-lat'),map.attr('data-lon'));
+			}
+		}
+	}
+	
+	function load_map(div,lat,lon){
+		
+		//generate map canvas
+		var latlng = new google.maps.LatLng(lat,lon);
+		var map_options = {	
+			center: latlng,
+			zoom: 16,
+			disableDefaultUI: true
+		};
+		var map = new google.maps.Map(div,map_options);
+		var marker_options = {
+			position: latlng,
+			map: map
+		};
+		new google.maps.Marker(marker_options);
+	}
+	
+	$(function(){
+		$('div.event.upcoming > a').each(function(){
+			event_toggle(this,true);
+		});
+	});
+	</script>
+
+<!--#include _logo.html-->
+<!--#include _footer.html-->
