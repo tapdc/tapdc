@@ -158,7 +158,7 @@ function serve(req,res){
 		}
 		
 		var data = fs.readFileSync('log').toString();
-		data = log.trim().split('\n').reverse().join('\n');
+		data = data.trim().split('\n').reverse().join('\n');
 		res.writeHead(200,{'Content-Type':'text/plain'});
 		res.end(data);
 		return;
