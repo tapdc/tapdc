@@ -24,3 +24,6 @@ The server (ssi.js) automatically runs the bot (fb.py) every hour.
  - You will need to register for a Facebook app under your name and get a "client token" in order to use the bot (fb.py). Copy the token where it says token = '' (line 34).
 
  - Some instances of the TAP-DC logo are rendered using HTML, since I was unable to obtain hi-res images. The code is in _logo.html
+
+ - Google Analytics snippet is embedded in _footer.html
+ 
