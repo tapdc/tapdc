@@ -1,7 +1,7 @@
 
 # TAP-DC Website
 
-This is the code for tap-dc.org
+This is the code for [tap-dc.org](http://tap-dc.org)
 
 ## Files
 
