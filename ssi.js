@@ -1,7 +1,13 @@
-//static file server that supports server-side includes
-//-support etags and max-age
-//-caches templates on server-side
-//-simple logging
+/*
+A simple Server-Side Includes server. Features:
+
+-cached server-side includes -- cache timeout is configurable below
+-serving static files -- supports etags and max-age
+-simple logging -- visit /log to view. password is configurable below
+-config overrides -- if a file called "config.json" exists in the same folder,
+ values from it override the config values below
+
+*/
 
 var config = {
 	port : 80,
@@ -40,6 +46,7 @@ setInterval(function(){
 	});
 },600*1000); //every 10 minutes
 
+//get mime type for path
 function content_type(path){
 	var ext = path.substr(path.lastIndexOf('.')+1);
 	//console.log(ext+" file");
@@ -112,8 +119,8 @@ function render(path,context){
 	return html;
 }
 
+//log a request
 function log(req,res){
-	//log request
 	//var time = (new Date()).toUTCString();
 	var time = Math.floor((new Date()).getTime()/1000);
 	var status = res.statusCode;
