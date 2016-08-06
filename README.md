@@ -10,7 +10,6 @@ This is the code for tap-dc.org
  - www/*.html -- full pages
  - www/media/ -- all the pictures used on the website
  - www/lib/ -- all the 3rd-party dependencies (jquery, fonts, etc.)
-
  - ssi.js -- this is a simple [Server-Side Includes](https://en.wikipedia.org/wiki/Server_Side_Includes) server that I wrote in NodeJS
  - fb.py -- this is a bot I wrote in Python that scrapes events off Facebook and generates 3 page fragments: _upcoming.html _past.html _next.html
 
