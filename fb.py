@@ -32,7 +32,7 @@ import urllib2
 import sqlite3
 
 #the client token
-token = '' #<--put your token here, or specify as argv[1]
+token = '1825743310990639|ges2quVkdhVB8Dpz9jG6C2qQe8A' #<--put your token here, or specify as argv[1]
 
 cache = sqlite3.connect('cache.db')
 cache.execute('CREATE TABLE IF NOT EXISTS cache (url UNIQUE, t, data)')
