@@ -10,7 +10,7 @@ A simple Server-Side Includes server. Features:
 */
 
 var config = {
-	port : 80,
+	port : 9980,
 	root : 'www',
 	maxage : 3600,
 	server : 'AaronSSI/1',
