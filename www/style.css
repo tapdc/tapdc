@@ -302,19 +302,18 @@ table.person td:first-child {
 	font-family: Lato;
 }
 table.person td:first-child > div:first-child {
-	font-size: 16pt;
+	font-size: 14pt;
 	margin: 0;
 	margin-bottom: 3px;
 	color: black;
 	font-weight: bold;
 }
 table.person td:first-child > div+div {
-	font-size: 10pt;
+	font-size: 9pt;
 	text-transform: uppercase;
 	color: black;
 	margin: 0;
 }
-
 table.person td+td {
 	width: 120px;
 	height: 120px;
