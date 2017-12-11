@@ -30,7 +30,9 @@ try{
 	Object.assign(config,_config);
 	console.log('Configuration loaded from config.json');
 }
-catch(e){}
+catch(e){
+	console.log('CONFIG ERROR:',e);
+}
 
 //template cache of path => { headers:headers, html:html, time:time }
 //uses config.cachemaxage (max age in seconds)
@@ -247,13 +249,14 @@ http.createServer(serve).listen(config.port);
 console.log('Listening on port '+config.port);
 
 //start python bot
-function run_bot(){
-	console.log('Running bot...')
-	child_process.exec('python fb.py "'+config.fb_token+'"',function(e,out,err){
-		console.log(out);
-		console.log(err);
-	});
+if(config.fb_token){
+	function run_bot(){
+		console.log('Running bot...')
+		child_process.exec('python fb.py "'+config.fb_token+'"',function(e,out,err){
+			console.log(out);
+			console.log(err);
+		});
+	}
+	run_bot();
+	setInterval(run_bot,3600*1000);
 }
-run_bot();
-setInterval(run_bot,3600*1000);
-
