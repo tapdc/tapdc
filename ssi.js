@@ -172,10 +172,23 @@ function serve(req,res){
 		res.end(data);
 		return;
 	}
-	
+
+	//strip off querystring
+	var i = req.url.indexOf('?');
+	if(i>0){
+		var path = req.url.slice(0,i);
+		var qs = req.url.slice(i);
+	}
+	else{
+		var path = req.url;
+		var qs = '';
+	}
+
 	//get absolute path
-	var path = config.root+req.url;
-	if(req.url=='/') path = config.root+'/index.html';
+	if(path=='/'){
+		path = '/index.html';
+	}
+	path = config.root+path;
 	
 	//look in cache
 	var item = cache[path];
